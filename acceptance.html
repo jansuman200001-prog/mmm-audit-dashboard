@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MMM audit acceptance criteria, completion evidence, blockers, and deliverable tracking.">
+  <title>MMM Audit Acceptance Criteria</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <div>
+        <p class="eyebrow">MMM calculation audit</p>
+        <h1>Acceptance criteria</h1>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <a class="button secondary" href="index.html">Program dashboard</a>
+    </div>
+  </header>
+
+  <main class="dashboard" style="max-width:1200px;margin:0 auto">
+    <section class="section hero-section" style="grid-template-columns:1fr" aria-labelledby="acceptance-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Evidence-based closure</p>
+        <h2 id="acceptance-title">What is complete, what lacks historical evidence, and what must remain blocked.</h2>
+        <p class="hero-description">A criterion becomes complete only when its required historical evidence and exit manifest pass. Implementation alone is not closure.</p>
+      </div>
+    </section>
+
+    <section id="summary" class="metric-grid" aria-label="Acceptance summary"></section>
+
+    <section class="section" aria-labelledby="criteria-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Acceptance ledger</p>
+          <h2 id="criteria-title">Criteria status</h2>
+          <p>Missing historical inputs are displayed explicitly instead of being treated as immediately completable work.</p>
+        </div>
+      </div>
+      <div id="criteria-table" class="table-wrap"></div>
+    </section>
+
+    <section class="section" aria-labelledby="deliverables-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Exact outputs</p>
+          <h2 id="deliverables-title">Deliverable status</h2>
+          <p>This list prevents code or documentation from being mistaken for the requested historical evidence package.</p>
+        </div>
+      </div>
+      <div id="deliverables-table" class="table-wrap"></div>
+    </section>
+
+    <section class="section safety-section" aria-labelledby="boundary-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Current boundary</p>
+          <h2 id="boundary-title">No production authorization</h2>
+          <p>Regression remains blocked through the required market window, shadow validation has not started, and controlled MMM fixes remain unauthorized.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="dashboard-footer">
+      <p>Public snapshot: sanitized acceptance summary.</p>
+      <p>Authoritative evidence and source records remain private.</p>
+    </footer>
+  </main>
+
+  <script>
+    (() => {
+      "use strict";
+      const stateLabel = value => String(value).replaceAll("_", " ");
+      const make = (tag, className, text) => {
+        const node = document.createElement(tag);
+        if (className) node.className = className;
+        if (text !== undefined) node.textContent = text;
+        return node;
+      };
+      const pillClass = state => {
+        if (state === "partial" || state === "implemented") return "implemented";
+        if (state === "validated") return "validated";
+        if (state === "complete") return "complete";
+        if (state === "blocked" || state === "blocked_missing_inputs") return "blocked";
+        return "not_started";
+      };
+
+      function metric(label, value, caption) {
+        const card = make("article", "metric-card");
+        card.append(
+          make("span", "metric-label", label),
+          make("strong", "metric-value", String(value)),
+          make("span", "metric-caption", caption)
+        );
+        return card;
+      }
+
+      function table(headers, rows) {
+        const wrapper = document.createElement("table");
+        wrapper.className = "data-table";
+        const thead = document.createElement("thead");
+        const tr = document.createElement("tr");
+        headers.forEach(header => tr.append(make("th", null, header)));
+        thead.append(tr);
+        const tbody = document.createElement("tbody");
+        rows.forEach(cells => {
+          const row = document.createElement("tr");
+          cells.forEach(cell => {
+            const td = document.createElement("td");
+            if (cell instanceof Node) td.append(cell);
+            else td.textContent = cell;
+            row.append(td);
+          });
+          tbody.append(row);
+        });
+        wrapper.append(thead, tbody);
+        return wrapper;
+      }
+
+      async function start() {
+        const response = await fetch("dashboard-data.json", { cache: "no-store" });
+        if (!response.ok) throw new Error(`Unable to load dashboard data: ${response.status}`);
+        const data = await response.json();
+        const criteria = data.acceptance_criteria || [];
+        const counts = criteria.reduce((result, item) => {
+          result[item.state] = (result[item.state] || 0) + 1;
+          return result;
+        }, {});
+        const completable = criteria.filter(item => item.can_complete_now && item.state !== "complete").length;
+
+        document.getElementById("summary").replaceChildren(
+          metric("Complete", counts.complete || 0, "Exit evidence satisfied"),
+          metric("Partial", counts.partial || 0, "Historical evidence incomplete"),
+          metric("Blocked", counts.blocked || 0, "Future evidence window"),
+          metric("Not started", counts.not_started || 0, "Depends on earlier closure"),
+          metric("Can complete now", completable, "No unresolved input dependency")
+        );
+
+        const criteriaRows = criteria.map(item => {
+          const status = make("span", `status-pill ${pillClass(item.state)}`, stateLabel(item.state));
+          const now = make("span", `boolean-badge ${item.can_complete_now}`, item.can_complete_now ? "Yes" : "No");
+          return [item.label, status, now, item.remaining];
+        });
+        document.getElementById("criteria-table").replaceChildren(
+          table(["Criterion", "State", "Can complete now", "Remaining evidence"], criteriaRows)
+        );
+
+        const deliverableRows = (data.deliverable_tracking || []).map(item => {
+          const status = make("span", `status-pill ${pillClass(item.state)}`, stateLabel(item.state));
+          return [`Iteration ${item.iteration}`, item.planned, status];
+        });
+        document.getElementById("deliverables-table").replaceChildren(
+          table(["Iteration", "Planned deliverable", "State"], deliverableRows)
+        );
+      }
+
+      start().catch(error => {
+        console.error(error);
+        document.getElementById("criteria-table").textContent = "Acceptance data could not be loaded. Serve this directory with a local web server.";
+      });
+    })();
+  </script>
+</body>
+</html>

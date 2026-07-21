@@ -1,0 +1,287 @@
+{
+  "as_of_date": "2026-07-06",
+  "capabilities": [
+    {
+      "evidence": "private audit artifact",
+      "mmm_status": "implemented",
+      "name": "Public/private architecture",
+      "target_status": "not_deployed"
+    },
+    {
+      "evidence": "private audit artifact",
+      "mmm_status": "implemented",
+      "name": "Shared news-record schema",
+      "target_status": "not_promoted"
+    },
+    {
+      "evidence": "private audit artifact",
+      "mmm_status": "implemented",
+      "name": "Dataset manifest schema",
+      "target_status": "not_promoted"
+    },
+    {
+      "evidence": "validate_dataset.py",
+      "mmm_status": "implemented_tested",
+      "name": "Public forbidden-field validator",
+      "target_status": "not_running_public_workflow"
+    },
+    {
+      "evidence": "verify_public_dataset.py",
+      "mmm_status": "implemented_tested",
+      "name": "Private checksum/freshness verifier",
+      "target_status": "not_running_separate_private_repo"
+    },
+    {
+      "evidence": "verify_public_dataset.py",
+      "mmm_status": "implemented",
+      "name": "Quarantine decision",
+      "target_status": "not_operating_canonical_storage"
+    },
+    {
+      "evidence": "private audit artifact",
+      "mmm_status": "implemented",
+      "name": "Private evidence schema",
+      "target_status": "not_deployed"
+    },
+    {
+      "evidence": "private audit artifact",
+      "mmm_status": "implemented",
+      "name": "Stock-opportunity dossier schema",
+      "target_status": "not_deployed"
+    },
+    {
+      "evidence": "compile_stock_dossiers.py",
+      "mmm_status": "implemented",
+      "name": "Dossier compiler",
+      "target_status": "needs_isolation"
+    },
+    {
+      "evidence": "validate_stock_dossiers.py",
+      "mmm_status": "implemented",
+      "name": "Dossier validator",
+      "target_status": "needs_isolation"
+    },
+    {
+      "evidence": "export_public_stock_opportunities.py",
+      "mmm_status": "implemented",
+      "name": "Privacy-safe exporter",
+      "target_status": "needs_isolation"
+    },
+    {
+      "evidence": "validate-stock-opportunity-dossiers.yml",
+      "mmm_status": "implemented_from_MMM",
+      "name": "Dashboard publication",
+      "target_status": "needs_dedicated_runtime"
+    },
+    {
+      "evidence": "required new work",
+      "mmm_status": "missing",
+      "name": "SEC collector",
+      "target_status": "missing"
+    },
+    {
+      "evidence": "required new work",
+      "mmm_status": "missing",
+      "name": "Company/IR collector",
+      "target_status": "missing"
+    },
+    {
+      "evidence": "entitlement/licensing review required",
+      "mmm_status": "missing",
+      "name": "Polygon/Massive news collector",
+      "target_status": "missing"
+    },
+    {
+      "evidence": "entitlement/licensing review required",
+      "mmm_status": "missing",
+      "name": "Finnhub news collector",
+      "target_status": "missing"
+    },
+    {
+      "evidence": "normalize/dedupe/tag scripts required",
+      "mmm_status": "missing",
+      "name": "Normalization pipeline",
+      "target_status": "missing"
+    },
+    {
+      "evidence": "adapt market-data Commit A/B/C pattern",
+      "mmm_status": "missing",
+      "name": "Immutable public-news publishing",
+      "target_status": "missing"
+    },
+    {
+      "evidence": "provider access/licensing needed",
+      "mmm_status": "blocked",
+      "name": "Genuine options-premium evidence",
+      "target_status": "blocked"
+    },
+    {
+      "evidence": "private audit artifact",
+      "mmm_status": "implemented",
+      "name": "Shadow-validation protocol",
+      "target_status": "0_runs"
+    }
+  ],
+  "iterations": [
+    {
+      "goal": "Create extraction map from MMM reference implementation to target public/private repositories.",
+      "id": "PPI-R0",
+      "name": "Reference inventory and canonical-source freeze",
+      "state": "ready_to_start"
+    },
+    {
+      "goal": "Deploy portable foundations into public paused public workstream news namespace and private paused private workstream.",
+      "id": "PPI-R1",
+      "name": "Create and populate canonical repositories",
+      "state": "pending"
+    },
+    {
+      "goal": "Reconcile existing MMM schema with proposed fields such as provider IDs, filing_type, source_hash and synthetic flags.",
+      "id": "PPI-R2",
+      "name": "Contract reconciliation and hardening",
+      "state": "pending"
+    },
+    {
+      "goal": "Implement SEC, official company, Polygon/Massive news and Finnhub news collectors.",
+      "id": "PPI-R3",
+      "name": "Missing public source collectors",
+      "state": "blocked_missing_implementation"
+    },
+    {
+      "goal": "Build deterministic transformation layer around existing schemas and catalyst taxonomy.",
+      "id": "PPI-R4",
+      "name": "Normalization, deduplication and tagging",
+      "state": "blocked_missing_implementation"
+    },
+    {
+      "goal": "Run manual news previews, then publish immutable public-news snapshots using Commit A/B/C pattern.",
+      "id": "PPI-R5",
+      "name": "Public workflow and immutable publishing",
+      "state": "pending"
+    },
+    {
+      "goal": "Promote existing verifier into separate private runtime with exact repo/branch/commit and processed-commit ledger.",
+      "id": "PPI-R6",
+      "name": "Private verification and quarantine",
+      "state": "reference_implemented"
+    },
+    {
+      "goal": "Move compiler, validator, policy and exporter out of MMM and remove MMM/source evidence runtime dependencies.",
+      "id": "PPI-R7",
+      "name": "Isolate dossier pipeline",
+      "state": "reference_implemented_needs_isolation"
+    },
+    {
+      "goal": "Supply real structural, price-volume and options evidence to the dossier pipeline.",
+      "id": "PPI-R8",
+      "name": "Private evidence adapters",
+      "state": "pending"
+    },
+    {
+      "goal": "Validate extracted two-repository system before schedules.",
+      "id": "PPI-R9",
+      "name": "End-to-end manual validation",
+      "state": "not_started"
+    },
+    {
+      "goal": "Schedule public and private runs only after manual E2E gate.",
+      "id": "PPI-R10",
+      "name": "Controlled scheduling",
+      "state": "not_started"
+    },
+    {
+      "goal": "Use frozen Iteration 17-style protocol for 20 isolated shadow runs.",
+      "id": "PPI-R11",
+      "name": "Twenty-run shadow validation",
+      "state": "not_started"
+    },
+    {
+      "goal": "Decide whether standalone system remains independent or exposes limited interface to MMM.",
+      "id": "PPI-R12",
+      "name": "Integration decision",
+      "state": "not_reached"
+    }
+  ],
+  "next_actions": [
+    "Create PPI reference inventory and extraction map",
+    "Freeze exact MMM reference commit",
+    "Classify reusable components as copy, adapt, reference-only, or do-not-copy",
+    "Create/select canonical private paused private workstream repository",
+    "Promote schemas and validators only after extraction map approval"
+  ],
+  "program": {
+    "authoritative_reference": "private source repository",
+    "current_iteration": "PPI-R0",
+    "current_status": "ready_to_start",
+    "id": "PPI",
+    "name": "Public-Private Intelligence extraction and deployment",
+    "public_dashboard_target": "jansuman200001-prog/mmm-audit-dashboard",
+    "strategy": "Inventory \u2192 extract \u2192 isolate \u2192 deploy \u2192 complete missing inputs",
+    "write_note": "Dashboard repo write access was unavailable through the connected integration; tracker is committed in MMM docs first."
+  },
+  "safety": [
+    {
+      "label": "MMM production scoring change authorized",
+      "value": false
+    },
+    {
+      "label": "source evidence writes authorized",
+      "value": false
+    },
+    {
+      "label": "Automatic trading authorized",
+      "value": false
+    },
+    {
+      "label": "Candidate promotion authorized",
+      "value": false
+    },
+    {
+      "label": "Public repo may contain private scores",
+      "value": false
+    },
+    {
+      "label": "Target runtime may depend directly on MMM",
+      "value": false
+    }
+  ],
+  "schema_version": "1.0.0",
+  "summary_cards": [
+    {
+      "caption": "Portable bootstrap, schemas, validators, dossier logic and shadow protocol exist.",
+      "label": "MMM reference implementation",
+      "state": "implemented",
+      "value": "Substantial"
+    },
+    {
+      "caption": "News namespace not deployed to active paused public workstream repository.",
+      "label": "Target public repository",
+      "state": "pending",
+      "value": "Pending"
+    },
+    {
+      "caption": "Canonical paused private workstream repository still needs to be created or selected.",
+      "label": "Target private repository",
+      "state": "blocked",
+      "value": "Missing"
+    },
+    {
+      "caption": "SEC, company-source, Polygon/Massive news and Finnhub news collectors remain unimplemented.",
+      "label": "Public collectors",
+      "state": "blocked",
+      "value": "Missing"
+    },
+    {
+      "caption": "20 isolated successful runs are required before integration decision.",
+      "label": "Shadow runs",
+      "state": "not_started",
+      "value": "0 / 20"
+    },
+    {
+      "caption": "No production scoring, qualification, deployment, or trading authorization.",
+      "label": "Integration decision",
+      "state": "not_started",
+      "value": "Not reached"
+    }
+  ]
+}

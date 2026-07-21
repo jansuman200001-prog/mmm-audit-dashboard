@@ -1,0 +1,783 @@
+{
+  "acceptance_criteria": [
+    {
+      "can_complete_now": false,
+      "id": "repositories_inventoried",
+      "label": "Both repositories inventoried",
+      "remaining": "None",
+      "state": "complete"
+    },
+    {
+      "can_complete_now": false,
+      "id": "scanner_runs_mapped",
+      "label": "Historical scanner runs mapped",
+      "remaining": "None",
+      "state": "complete"
+    },
+    {
+      "can_complete_now": false,
+      "id": "all_output_fields_defined",
+      "label": "Every output field defined",
+      "remaining": "None",
+      "state": "complete"
+    },
+    {
+      "can_complete_now": false,
+      "id": "source_lineage_documented",
+      "label": "Source lineage documented",
+      "remaining": "None",
+      "state": "complete"
+    },
+    {
+      "can_complete_now": false,
+      "id": "price_calculations_reproduced",
+      "label": "Price calculations reproduced",
+      "remaining": "Timestamped calculator input, SPY, long-window history, corporate actions, retained metrics, comparisons, and exit manifest",
+      "state": "partial"
+    },
+    {
+      "can_complete_now": false,
+      "id": "technical_indicators_reproduced",
+      "label": "Technical indicators reproduced",
+      "remaining": "Timestamped OHLCV, long-window history, corporate actions, retained indicators, comparisons, and exit manifest",
+      "state": "partial"
+    },
+    {
+      "can_complete_now": false,
+      "id": "fundamentals_reproduced",
+      "label": "Fundamentals reproduced",
+      "remaining": "Frozen filing snapshots, retained reported fundamentals, comparisons, and exit manifest",
+      "state": "partial"
+    },
+    {
+      "can_complete_now": false,
+      "id": "options_fields_classified",
+      "label": "Options fields classified",
+      "remaining": "None",
+      "state": "complete"
+    },
+    {
+      "can_complete_now": false,
+      "id": "final_scores_reconstructed",
+      "label": "Final scores reconstructed",
+      "remaining": "None; retained limitations are classified",
+      "state": "complete"
+    },
+    {
+      "can_complete_now": false,
+      "id": "discrepancies_classified",
+      "label": "All discrepancies have severity and root cause",
+      "remaining": "None",
+      "state": "complete"
+    },
+    {
+      "can_complete_now": false,
+      "id": "corrected_logic_regression",
+      "label": "Corrected logic passes regression testing",
+      "remaining": "Real evidence through 2026-07-24, 88 labels, metrics, and closure",
+      "state": "blocked"
+    },
+    {
+      "can_complete_now": false,
+      "id": "shadow_runs_complete",
+      "label": "20 shadow runs completed",
+      "remaining": "20 successful runs, at least 10 distinct trading days, summary, and closure after Iteration 16",
+      "state": "not_started"
+    },
+    {
+      "can_complete_now": false,
+      "id": "mmm_unchanged",
+      "label": "MMM unchanged during evaluation",
+      "remaining": "None",
+      "state": "complete"
+    },
+    {
+      "can_complete_now": false,
+      "id": "source evidence_unchanged",
+      "label": "source evidence unchanged during evaluation",
+      "remaining": "None",
+      "state": "complete"
+    }
+  ],
+  "active_scope": {
+    "iterations": "0-19",
+    "program": "MMM Calculation Evaluation and Correction Plan"
+  },
+  "as_of_date": "2026-07-09",
+  "deliverable_tracking": [
+    {
+      "iteration": 0,
+      "planned": "Private audit deliverable",
+      "state": "complete"
+    },
+    {
+      "iteration": 1,
+      "planned": "Private audit deliverable",
+      "state": "complete"
+    },
+    {
+      "iteration": 2,
+      "planned": "Private audit deliverable",
+      "state": "complete"
+    },
+    {
+      "iteration": 3,
+      "planned": "Private audit deliverable",
+      "state": "pending_evidence"
+    },
+    {
+      "iteration": 4,
+      "planned": "Private audit deliverable",
+      "state": "complete"
+    },
+    {
+      "iteration": 5,
+      "planned": "Private audit deliverable",
+      "state": "pending_primary_source"
+    },
+    {
+      "iteration": 6,
+      "planned": "Private audit deliverable",
+      "state": "blocked_missing_inputs"
+    },
+    {
+      "iteration": 7,
+      "planned": "Private audit deliverable",
+      "state": "blocked_missing_inputs"
+    },
+    {
+      "iteration": 8,
+      "planned": "Private audit deliverable",
+      "state": "blocked_missing_inputs"
+    },
+    {
+      "iteration": 9,
+      "planned": "Private audit deliverable",
+      "state": "complete"
+    },
+    {
+      "iteration": 11,
+      "planned": "Private audit deliverable",
+      "state": "complete"
+    },
+    {
+      "iteration": 12,
+      "planned": "Private audit deliverable",
+      "state": "complete"
+    },
+    {
+      "iteration": 13,
+      "planned": "Private audit deliverable",
+      "state": "complete"
+    },
+    {
+      "iteration": 14,
+      "planned": "Private audit deliverable",
+      "state": "complete"
+    },
+    {
+      "iteration": 17,
+      "planned": "Private audit deliverable",
+      "state": "implemented"
+    },
+    {
+      "iteration": 17,
+      "planned": "Private audit deliverable",
+      "state": "pending_dependency"
+    },
+    {
+      "iteration": 18,
+      "planned": "Private audit deliverable",
+      "state": "implemented_pending_results"
+    }
+  ],
+  "headline": {
+    "all_iterations_complete": false,
+    "current_blocker": "PPI-R0 through PPI-R8 validation gates are merged into main. Live collectors, publishing, private scoring, candidate promotion, and trading remain disabled; Iteration 16 still waits for real market evidence through 2026-07-24.",
+    "current_iteration": 16,
+    "highest_formally_completed_iteration": 15,
+    "production_change_authorized": false,
+    "total_iterations": 20
+  },
+  "iteration_16": {
+    "frozen_contract": {
+      "benchmark": "SPY",
+      "candidates": 4,
+      "comparison_rows": 88,
+      "expected_label_rows": 88,
+      "horizons": [
+        1,
+        5,
+        10,
+        20
+      ],
+      "observations": 22,
+      "required_market_end_date": "2026-07-24",
+      "round_trip_cost_bps": 10
+    },
+    "gates": [
+      {
+        "name": "Protocol gate",
+        "state": "passed"
+      },
+      {
+        "name": "Label-contract dependency gate",
+        "state": "passed"
+      },
+      {
+        "name": "Real market input gate",
+        "state": "pending"
+      },
+      {
+        "name": "Real 88-row label gate",
+        "state": "pending"
+      },
+      {
+        "name": "Performance metrics gate",
+        "state": "pending"
+      }
+    ],
+    "pending_measurements": [
+      "Calculation error rate",
+      "Ticker coverage",
+      "Score changes",
+      "Ranking changes",
+      "False positives",
+      "False negatives",
+      "Signal timing",
+      "Runtime",
+      "Provider-failure impact"
+    ]
+  },
+  "iterations": [
+    {
+      "evidence": [
+        "Verified private evidence"
+      ],
+      "exit_gate_passed": true,
+      "iteration": 0,
+      "name": "Audit Foundation",
+      "phase": "Foundation",
+      "state": "complete",
+      "summary": "The isolated audit control plane and safety boundary are formally closed."
+    },
+    {
+      "evidence": [
+        "Verified private evidence"
+      ],
+      "exit_gate_passed": true,
+      "iteration": 1,
+      "name": "Access and Inventory",
+      "phase": "Foundation",
+      "state": "complete",
+      "summary": "Repositories, runs, reference files, schemas, and missing evidence are inventoried."
+    },
+    {
+      "evidence": [
+        "Verified private evidence"
+      ],
+      "exit_gate_passed": true,
+      "iteration": 2,
+      "name": "Immutable Snapshots",
+      "phase": "Evidence",
+      "state": "complete",
+      "summary": "Four frozen repositories and all retained same-day evidence rebuild deterministically with zero differences."
+    },
+    {
+      "evidence": [
+        "Private implementation record"
+      ],
+      "iteration": 3,
+      "name": "Scanner-Run Integrity",
+      "phase": "Evidence",
+      "state": "implemented",
+      "summary": "Integrity tooling exists; the complete generated evidence package and passing manifest are not retained."
+    },
+    {
+      "evidence": [
+        "Verified private evidence"
+      ],
+      "exit_gate_passed": true,
+      "iteration": 4,
+      "name": "Data Dictionary and Lineage",
+      "phase": "Evidence",
+      "state": "complete",
+      "summary": "All published fields are fully defined and source-linked."
+    },
+    {
+      "evidence": [
+        "Private implementation record"
+      ],
+      "iteration": 5,
+      "name": "Ticker Identity and Corporate Actions",
+      "phase": "Calculation audit",
+      "state": "implemented",
+      "summary": "SOXL is verified; WDC/SNDK primary separation evidence and exact distribution ratio remain open."
+    },
+    {
+      "evidence": [
+        "Private implementation record"
+      ],
+      "iteration": 6,
+      "name": "Price and Return Audit",
+      "phase": "Calculation audit",
+      "state": "implemented",
+      "summary": "Calculator and evidence contract exist; calculator-compatible historical inputs and reported comparisons remain missing."
+    },
+    {
+      "evidence": [
+        "Private implementation record"
+      ],
+      "iteration": 7,
+      "name": "Technical Indicator Audit",
+      "phase": "Calculation audit",
+      "state": "implemented",
+      "summary": "Calculator and evidence contract exist; timestamped long-window inputs and reported indicator comparisons remain missing."
+    },
+    {
+      "evidence": [
+        "Private implementation record"
+      ],
+      "iteration": 8,
+      "name": "Fundamental Audit",
+      "phase": "Calculation audit",
+      "state": "implemented",
+      "summary": "Calculator and evidence contract exist; frozen filing snapshots and reported comparisons remain missing."
+    },
+    {
+      "evidence": [
+        "Verified private evidence"
+      ],
+      "exit_gate_passed": true,
+      "iteration": 9,
+      "name": "Provider and Fallback Lineage",
+      "phase": "Provider audit",
+      "state": "complete",
+      "summary": "Provider, fallback, cache, freshness, default, unit, currency, and definition lineage is complete."
+    },
+    {
+      "evidence": [
+        "Verified private evidence"
+      ],
+      "iteration": 10,
+      "name": "Options and Proxy Evidence",
+      "phase": "Provider audit",
+      "state": "complete",
+      "summary": "Options and proxy claims are classified and evidence-gated."
+    },
+    {
+      "evidence": [
+        "Verified private evidence"
+      ],
+      "exit_gate_passed": true,
+      "iteration": 11,
+      "name": "Composite Score Reconstruction",
+      "phase": "Scoring audit",
+      "state": "complete",
+      "summary": "6,305 historical rows reconciled with zero unexplained findings."
+    },
+    {
+      "evidence": [
+        "Verified private evidence"
+      ],
+      "exit_gate_passed": true,
+      "iteration": 12,
+      "name": "Case Studies",
+      "phase": "Correction design",
+      "state": "complete",
+      "summary": "All 11 case timelines and outcomes were generated from validated real price evidence."
+    },
+    {
+      "evidence": [
+        "Verified private evidence"
+      ],
+      "exit_gate_passed": true,
+      "iteration": 13,
+      "name": "Issue Classification",
+      "phase": "Correction design",
+      "state": "complete",
+      "summary": "Two High and three Medium findings have complete severity, root cause, scope, evidence, reproduction, and correction mapping."
+    },
+    {
+      "evidence": [
+        "Verified private evidence"
+      ],
+      "exit_gate_passed": true,
+      "iteration": 14,
+      "name": "Correction Design",
+      "phase": "Correction design",
+      "state": "complete",
+      "summary": "All five issues are mapped to independent correction batches consumed by Iteration 15."
+    },
+    {
+      "evidence": [
+        "Verified private evidence"
+      ],
+      "exit_gate_passed": true,
+      "iteration": 15,
+      "name": "Independent Corrected Calculator",
+      "phase": "Correction validation",
+      "state": "complete",
+      "summary": "Four frozen candidates and the independent calculator passed the exit gate."
+    },
+    {
+      "blocker": "Required market window ends on 2026-07-24.",
+      "evidence": [
+        "Pending evidence"
+      ],
+      "iteration": 16,
+      "name": "Regression and Backtesting",
+      "phase": "Correction validation",
+      "state": "blocked",
+      "summary": "Protocol and tooling are ready; the complete real market window is not yet available."
+    },
+    {
+      "evidence": [
+        "Private implementation record"
+      ],
+      "execution_state": "not_started",
+      "iteration": 17,
+      "name": "Shadow Validation",
+      "phase": "Operational validation",
+      "state": "implemented",
+      "summary": "Execution contract is ready, but zero shadow runs have occurred and Iteration 16 remains a dependency."
+    },
+    {
+      "document_state": "controlled_draft",
+      "evidence": [
+        "Private implementation record"
+      ],
+      "iteration": 18,
+      "name": "Final Audit Report",
+      "phase": "Reporting",
+      "state": "implemented",
+      "summary": "Controlled report draft exists; regression, shadow, candidate, and migration conclusions remain pending."
+    },
+    {
+      "evidence": [],
+      "iteration": 19,
+      "name": "Controlled MMM Fixes",
+      "phase": "Production change",
+      "state": "not_started",
+      "summary": "Explicit approval remains required before any production correction."
+    }
+  ],
+  "market_intelligence": {
+    "candidate_policy": "Only validator-approved dossiers are published; private evidence remains private.",
+    "historical_inspiration": [
+      {
+        "classification": "historical pattern reference",
+        "note": "Demand, supply constraints, customer commitments, earnings revisions, and industry spending became visible before the strongest price acceleration.",
+        "symbol": "MU"
+      },
+      {
+        "classification": "historical pattern reference",
+        "note": "Demand, shortages, customer commitments, earnings revisions, and industry spending are retained as pattern-library evidence, not as a current recommendation.",
+        "symbol": "SNDK"
+      }
+    ],
+    "mode": "stock_opportunity_dossiers",
+    "opportunities": [],
+    "required_fields": [
+      {
+        "id": "major_move_thesis",
+        "label": "Why the company may be preparing for a major move"
+      },
+      {
+        "id": "market_recognition",
+        "label": "When the market begins recognizing the opportunity"
+      },
+      {
+        "id": "demand_supply",
+        "label": "Whether demand is growing faster than supply"
+      },
+      {
+        "id": "capex_flow",
+        "label": "Where hyperscaler and industry capital expenditure is flowing"
+      },
+      {
+        "id": "estimate_revisions",
+        "label": "Whether earnings expectations and analyst estimates are improving"
+      },
+      {
+        "id": "options_premium",
+        "label": "Whether real options premium is building before a breakout"
+      },
+      {
+        "id": "technical_confirmation",
+        "label": "Whether volume, relative strength, and price patterns confirm the thesis"
+      },
+      {
+        "id": "opportunity_stage",
+        "label": "Whether the opportunity is early, confirmed, mature, or overcrowded"
+      }
+    ],
+    "schema_version": "1.0.0",
+    "validation_summary": {
+      "record_count": 10,
+      "research_candidate_count": 0,
+      "valid_record_count": 10,
+      "validation_passed": true
+    }
+  },
+  "milestones": [
+    {
+      "commit": "Private audit record",
+      "label": "PPI R0-R8 validation gates merged",
+      "pr": "private"
+    },
+    {
+      "commit": "Private audit record",
+      "label": "Iteration 2 formal closure",
+      "pr": "private"
+    },
+    {
+      "commit": "Private audit record",
+      "label": "Iteration 0 formal closure",
+      "pr": "private"
+    },
+    {
+      "commit": "Private audit record",
+      "label": "Iteration 14 formal closure",
+      "pr": "private"
+    },
+    {
+      "commit": "Private audit record",
+      "label": "Iteration 12 hosted closure",
+      "pr": "private"
+    },
+    {
+      "commit": "Private audit record",
+      "label": "Iteration 13 hosted closure",
+      "pr": "private"
+    },
+    {
+      "commit": "Private audit record",
+      "label": "Iterations 6-8 evidence contracts",
+      "pr": "private"
+    }
+  ],
+  "remaining_plan": [
+    {
+      "iteration": 3,
+      "steps": [
+        "Run integrity pipeline against frozen source evidence",
+        "Retain all generated outputs",
+        "Pass independent verification",
+        "Publish closure"
+      ]
+    },
+    {
+      "iteration": 5,
+      "steps": [
+        "Verify WDC/SNDK primary source and ratio",
+        "Clear review queue",
+        "Pass manifest",
+        "Publish closure"
+      ]
+    },
+    {
+      "iteration": 16,
+      "steps": [
+        "Complete market coverage through 2026-07-24",
+        "Pass real input and label gates",
+        "Calculate all frozen metrics",
+        "Publish closure"
+      ]
+    },
+    {
+      "iteration": 17,
+      "steps": [
+        "Begin only after Iteration 16 passes",
+        "Run at least 20 read-only shadow executions",
+        "Reach at least 10 distinct trading days and preferably 20",
+        "Publish closure"
+      ]
+    },
+    {
+      "iteration": 18,
+      "steps": [
+        "Populate regression and shadow sections",
+        "Finalize candidate and migration conclusions",
+        "Approve final report"
+      ]
+    },
+    {
+      "iteration": 19,
+      "steps": [
+        "Obtain explicit approval",
+        "Apply one correction batch per reviewed branch",
+        "Retain tested rollback"
+      ]
+    }
+  ],
+  "safety": [
+    {
+      "label": "MMM production behavior modified",
+      "value": false
+    },
+    {
+      "label": "source evidence modified",
+      "value": false
+    },
+    {
+      "label": "Candidate promotion authorized",
+      "value": false
+    },
+    {
+      "label": "Production change authorized",
+      "value": false
+    },
+    {
+      "label": "Deployment authorized",
+      "value": false
+    },
+    {
+      "label": "PPI live runtime enabled",
+      "value": false
+    },
+    {
+      "label": "PPI publishing enabled",
+      "value": false
+    },
+    {
+      "label": "PPI private scoring enabled",
+      "value": false
+    },
+    {
+      "label": "Trading authorized",
+      "value": false
+    }
+  ],
+  "schema_version": "1.8.0",
+  "state_counts": {
+    "blocked": 1,
+    "complete": 11,
+    "implemented": 7,
+    "not_started": 1
+  },
+  "supporting_milestones": [
+    {
+      "evidence": [
+        "Verified private evidence"
+      ],
+      "name": "Milestone 2 Provider Access Preparation",
+      "relationship": "Supporting provider-capability milestone; not a replacement for Iteration 11.",
+      "state": "validated"
+    }
+  ],
+  "verified_results": {
+    "control_reproduction": {
+      "changed_qualification_count": 0,
+      "mean_absolute_rank_delta": 0.0,
+      "score_delta_count": 0
+    },
+    "iteration_0": {
+      "exit_gate_passed": true,
+      "production_change_authorized": false
+    },
+    "iteration_1": {
+      "exit_gate_passed": true,
+      "reference_dates": 13,
+      "repositories_readable": 3,
+      "scanner_runs": 2
+    },
+    "iteration_11": {
+      "exit_gate_passed": true,
+      "processed_runs": 2,
+      "total_rows": 6305,
+      "unexplained_findings": 0
+    },
+    "iteration_12": {
+      "cases": 11,
+      "early": 1,
+      "exit_gate_passed": true,
+      "false_positive": 1,
+      "late": 1,
+      "missed": 4,
+      "no_material_move": 4,
+      "price_bars": 473
+    },
+    "iteration_13": {
+      "confirmed_formula_defects": 0,
+      "critical": 0,
+      "exit_gate_passed": true,
+      "high": 2,
+      "issues": 5,
+      "low": 0,
+      "medium": 3
+    },
+    "iteration_14": {
+      "batches": 5,
+      "exit_gate_passed": true,
+      "issues": 5,
+      "production_change_authorized": false
+    },
+    "iteration_15_counts": {
+      "candidate_count": 4,
+      "canonical_evidence_rows": 26,
+      "canonical_observations": 22,
+      "comparison_rows": 88,
+      "physical_evidence_rows": 27,
+      "provider_rows": 26,
+      "rationale_rows": 26
+    },
+    "iteration_17_readiness": {
+      "exit_gate_passed": false,
+      "minimum_distinct_trading_days": 10,
+      "minimum_successful_runs": 20,
+      "preferred_distinct_trading_days": 20,
+      "protocol_gate_passed": true,
+      "successful_runs": 0
+    },
+    "iteration_2": {
+      "derived_delta_records": 9,
+      "deterministic_rebuild": true,
+      "difference_count": 0,
+      "exit_gate_passed": true,
+      "independent_verification_passes": 2,
+      "production_change_authorized": false,
+      "repository_count": 4,
+      "repository_file_hash_rows": 95,
+      "same_day_runs": 11,
+      "same_day_source_records": 31
+    },
+    "iteration_4": {
+      "agents": 12,
+      "exit_gate_passed": true,
+      "published_field_mappings": 85
+    },
+    "iteration_6_7_supporting_price_evidence": {
+      "calculator_input_eligible": false,
+      "first_session": "2026-05-01",
+      "last_session": "2026-07-02",
+      "price_bars": 473,
+      "sessions_per_ticker": 43,
+      "tickers": 11,
+      "validation_issues": 0
+    },
+    "iteration_9": {
+      "cache_policies": 2,
+      "exit_gate_passed": true,
+      "fallback_paths": 14,
+      "published_fields": 10
+    },
+    "ppi_validation": {
+      "candidate_promotion_authorized": false,
+      "gates_merged": 9,
+      "highest_gate": "PPI-R8",
+      "main_merge_commit": "private commit",
+      "merged_pr": 49,
+      "private_scoring_enabled": false,
+      "publishing_enabled": false,
+      "runtime_enabled": false,
+      "trading_authorized": false,
+      "validation_workflow": "success"
+    },
+    "provider_policy": {
+      "candidate_qualifying": 2,
+      "changed_decisions": 2,
+      "original_qualifying": 4
+    }
+  }
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PPI Program Tracker</title>
+  <title>PPI R11/R2 Production-Proof Tracker</title>
   <style>
     :root {
       color-scheme: light dark;
@@ -36,8 +36,8 @@
     .card span { display:block; color:var(--muted); font-size:.75rem; font-weight:800; text-transform:uppercase; letter-spacing:.07em; }
     .card strong { display:block; margin-top:12px; font-size:1.45rem; letter-spacing:-.04em; }
     .card p { color:var(--muted); margin:10px 0 0; font-size:.78rem; line-height:1.45; }
-    .state-implemented { border-color: color-mix(in srgb, var(--implemented) 45%, var(--border)); }
-    .state-pending, .state-reference-implemented, .state-reference-implemented-needs-isolation { border-color: color-mix(in srgb, var(--pending) 45%, var(--border)); }
+    .state-implemented, .state-deployed, .state-pass { border-color: color-mix(in srgb, var(--implemented) 45%, var(--border)); }
+    .state-pending, .state-reference-implemented, .state-reference-implemented-needs-isolation, .state-not-proven { border-color: color-mix(in srgb, var(--pending) 45%, var(--border)); }
     .state-blocked, .state-blocked-missing-implementation { border-color: color-mix(in srgb, var(--blocked) 45%, var(--border)); }
     .state-ready-to-start { border-color: color-mix(in srgb, var(--ready) 50%, var(--border)); }
     .state-not-started, .state-not-reached { border-color: color-mix(in srgb, var(--not-started) 45%, var(--border)); }
@@ -70,8 +70,8 @@
   <main class="shell">
     <header>
       <div>
-        <p class="eyebrow">PPI program tracker</p>
-        <h1>Public–Private Intelligence dashboard</h1>
+        <p class="eyebrow">PPI R11 · Batch-3 R2</p>
+        <h1>Production-proof dashboard</h1>
         <p class="lead" id="lead">Loading tracker data…</p>
       </div>
       <div class="badge" id="as-of">Loading…</div>
@@ -83,13 +83,13 @@
       <div class="section-title">
         <div>
           <p class="eyebrow">Capability inventory</p>
-          <h2>What exists in MMM versus what is deployed</h2>
-          <p class="sub">This keeps reference implementation status separate from target repository readiness.</p>
+          <h2>Deployed remediation gates and remaining proof</h2>
+          <p class="sub">Code-remediation closure is tracked separately from authentic production evidence.</p>
         </div>
       </div>
       <div style="overflow:auto">
         <table>
-          <thead><tr><th>Capability</th><th>MMM reference</th><th>Target deployment</th><th>Evidence</th></tr></thead>
+          <thead><tr><th>Capability</th><th>Reference status</th><th>Target status</th><th>Evidence</th></tr></thead>
           <tbody id="capabilities"></tbody>
         </table>
       </div>
@@ -98,9 +98,9 @@
     <section class="panel">
       <div class="section-title">
         <div>
-          <p class="eyebrow">Delta-only roadmap</p>
+          <p class="eyebrow">Roadmap</p>
           <h2>PPI-R0 through PPI-R12</h2>
-          <p class="sub">The next executable step is PPI-R0: reference inventory and canonical-source freeze.</p>
+          <p class="sub">R11/R2 code remediation is complete. The next executable step is the controlled real pilot and authentic production proof.</p>
         </div>
       </div>
       <div class="timeline" id="iterations"></div>
@@ -111,7 +111,7 @@
         <div class="section-title">
           <div>
             <p class="eyebrow">Next actions</p>
-            <h2>Immediate work queue</h2>
+            <h2>Production-proof work queue</h2>
           </div>
         </div>
         <ul class="checklist" id="next-actions"></ul>
@@ -128,7 +128,7 @@
     </section>
 
     <footer>
-      <p>This is a sanitized tracker. MMM remains the reference/audit repository; target PPI runtime must be isolated before integration decisions.</p>
+      <p>This is a sanitized evidence/status tracker. R11/R2 code remediation is complete; authentic production proof awaits a controlled real pilot. Nothing on this dashboard grants trading authority, registry mutation authority, or automatic downstream action.</p>
     </footer>
   </main>
 
@@ -142,21 +142,18 @@
       return node;
     }
     function pill(state) {
-      const node = el("span", "pill " + cls(state), stateLabel(state));
-      return node;
+      return el("span", "pill " + cls(state), stateLabel(state));
     }
     async function start() {
       const res = await fetch("ppi-dashboard-data.json", {cache: "no-store"});
       const data = await res.json();
       document.getElementById("as-of").textContent = "Status as of " + data.as_of_date;
-      document.getElementById("lead").textContent = `${data.program.strategy}. Current iteration: ${data.program.current_iteration}. Reference: ${data.program.authoritative_reference}.`;
-
+      document.getElementById("lead").textContent = `${data.program.strategy}. Current iteration: ${data.program.current_iteration}. Status: ${stateLabel(data.program.current_status)}.`;
       document.getElementById("summary").replaceChildren(...data.summary_cards.map(card => {
         const node = el("article", "card " + cls(card.state));
         node.append(el("span", null, card.label), el("strong", null, card.value), el("p", null, card.caption));
         return node;
       }));
-
       document.getElementById("capabilities").replaceChildren(...data.capabilities.map(item => {
         const tr = document.createElement("tr");
         tr.append(el("td", null, item.name));
@@ -166,7 +163,6 @@
         tr.append(m, t, e);
         return tr;
       }));
-
       document.getElementById("iterations").replaceChildren(...data.iterations.map(item => {
         const row = el("article", "iteration " + cls(item.state));
         row.append(el("div", "num", item.id));
@@ -175,7 +171,6 @@
         row.append(body, pill(item.state));
         return row;
       }));
-
       document.getElementById("next-actions").replaceChildren(...data.next_actions.map(action => el("li", null, action)));
       document.getElementById("safety").replaceChildren(...data.safety.map(item => {
         const node = el("div", "safety");

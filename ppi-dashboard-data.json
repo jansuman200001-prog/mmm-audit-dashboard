@@ -1,287 +1,109 @@
 {
-  "as_of_date": "2026-07-06",
-  "capabilities": [
-    {
-      "evidence": "private audit artifact",
-      "mmm_status": "implemented",
-      "name": "Public/private architecture",
-      "target_status": "not_deployed"
-    },
-    {
-      "evidence": "private audit artifact",
-      "mmm_status": "implemented",
-      "name": "Shared news-record schema",
-      "target_status": "not_promoted"
-    },
-    {
-      "evidence": "private audit artifact",
-      "mmm_status": "implemented",
-      "name": "Dataset manifest schema",
-      "target_status": "not_promoted"
-    },
-    {
-      "evidence": "validate_dataset.py",
-      "mmm_status": "implemented_tested",
-      "name": "Public forbidden-field validator",
-      "target_status": "not_running_public_workflow"
-    },
-    {
-      "evidence": "verify_public_dataset.py",
-      "mmm_status": "implemented_tested",
-      "name": "Private checksum/freshness verifier",
-      "target_status": "not_running_separate_private_repo"
-    },
-    {
-      "evidence": "verify_public_dataset.py",
-      "mmm_status": "implemented",
-      "name": "Quarantine decision",
-      "target_status": "not_operating_canonical_storage"
-    },
-    {
-      "evidence": "private audit artifact",
-      "mmm_status": "implemented",
-      "name": "Private evidence schema",
-      "target_status": "not_deployed"
-    },
-    {
-      "evidence": "private audit artifact",
-      "mmm_status": "implemented",
-      "name": "Stock-opportunity dossier schema",
-      "target_status": "not_deployed"
-    },
-    {
-      "evidence": "compile_stock_dossiers.py",
-      "mmm_status": "implemented",
-      "name": "Dossier compiler",
-      "target_status": "needs_isolation"
-    },
-    {
-      "evidence": "validate_stock_dossiers.py",
-      "mmm_status": "implemented",
-      "name": "Dossier validator",
-      "target_status": "needs_isolation"
-    },
-    {
-      "evidence": "export_public_stock_opportunities.py",
-      "mmm_status": "implemented",
-      "name": "Privacy-safe exporter",
-      "target_status": "needs_isolation"
-    },
-    {
-      "evidence": "validate-stock-opportunity-dossiers.yml",
-      "mmm_status": "implemented_from_MMM",
-      "name": "Dashboard publication",
-      "target_status": "needs_dedicated_runtime"
-    },
-    {
-      "evidence": "required new work",
-      "mmm_status": "missing",
-      "name": "SEC collector",
-      "target_status": "missing"
-    },
-    {
-      "evidence": "required new work",
-      "mmm_status": "missing",
-      "name": "Company/IR collector",
-      "target_status": "missing"
-    },
-    {
-      "evidence": "entitlement/licensing review required",
-      "mmm_status": "missing",
-      "name": "Polygon/Massive news collector",
-      "target_status": "missing"
-    },
-    {
-      "evidence": "entitlement/licensing review required",
-      "mmm_status": "missing",
-      "name": "Finnhub news collector",
-      "target_status": "missing"
-    },
-    {
-      "evidence": "normalize/dedupe/tag scripts required",
-      "mmm_status": "missing",
-      "name": "Normalization pipeline",
-      "target_status": "missing"
-    },
-    {
-      "evidence": "adapt market-data Commit A/B/C pattern",
-      "mmm_status": "missing",
-      "name": "Immutable public-news publishing",
-      "target_status": "missing"
-    },
-    {
-      "evidence": "provider access/licensing needed",
-      "mmm_status": "blocked",
-      "name": "Genuine options-premium evidence",
-      "target_status": "blocked"
-    },
-    {
-      "evidence": "private audit artifact",
-      "mmm_status": "implemented",
-      "name": "Shadow-validation protocol",
-      "target_status": "0_runs"
-    }
-  ],
-  "iterations": [
-    {
-      "goal": "Create extraction map from MMM reference implementation to target public/private repositories.",
-      "id": "PPI-R0",
-      "name": "Reference inventory and canonical-source freeze",
-      "state": "ready_to_start"
-    },
-    {
-      "goal": "Deploy portable foundations into public paused public workstream news namespace and private paused private workstream.",
-      "id": "PPI-R1",
-      "name": "Create and populate canonical repositories",
-      "state": "pending"
-    },
-    {
-      "goal": "Reconcile existing MMM schema with proposed fields such as provider IDs, filing_type, source_hash and synthetic flags.",
-      "id": "PPI-R2",
-      "name": "Contract reconciliation and hardening",
-      "state": "pending"
-    },
-    {
-      "goal": "Implement SEC, official company, Polygon/Massive news and Finnhub news collectors.",
-      "id": "PPI-R3",
-      "name": "Missing public source collectors",
-      "state": "blocked_missing_implementation"
-    },
-    {
-      "goal": "Build deterministic transformation layer around existing schemas and catalyst taxonomy.",
-      "id": "PPI-R4",
-      "name": "Normalization, deduplication and tagging",
-      "state": "blocked_missing_implementation"
-    },
-    {
-      "goal": "Run manual news previews, then publish immutable public-news snapshots using Commit A/B/C pattern.",
-      "id": "PPI-R5",
-      "name": "Public workflow and immutable publishing",
-      "state": "pending"
-    },
-    {
-      "goal": "Promote existing verifier into separate private runtime with exact repo/branch/commit and processed-commit ledger.",
-      "id": "PPI-R6",
-      "name": "Private verification and quarantine",
-      "state": "reference_implemented"
-    },
-    {
-      "goal": "Move compiler, validator, policy and exporter out of MMM and remove MMM/source evidence runtime dependencies.",
-      "id": "PPI-R7",
-      "name": "Isolate dossier pipeline",
-      "state": "reference_implemented_needs_isolation"
-    },
-    {
-      "goal": "Supply real structural, price-volume and options evidence to the dossier pipeline.",
-      "id": "PPI-R8",
-      "name": "Private evidence adapters",
-      "state": "pending"
-    },
-    {
-      "goal": "Validate extracted two-repository system before schedules.",
-      "id": "PPI-R9",
-      "name": "End-to-end manual validation",
-      "state": "not_started"
-    },
-    {
-      "goal": "Schedule public and private runs only after manual E2E gate.",
-      "id": "PPI-R10",
-      "name": "Controlled scheduling",
-      "state": "not_started"
-    },
-    {
-      "goal": "Use frozen Iteration 17-style protocol for 20 isolated shadow runs.",
-      "id": "PPI-R11",
-      "name": "Twenty-run shadow validation",
-      "state": "not_started"
-    },
-    {
-      "goal": "Decide whether standalone system remains independent or exposes limited interface to MMM.",
-      "id": "PPI-R12",
-      "name": "Integration decision",
-      "state": "not_reached"
-    }
-  ],
-  "next_actions": [
-    "Create PPI reference inventory and extraction map",
-    "Freeze exact MMM reference commit",
-    "Classify reusable components as copy, adapt, reference-only, or do-not-copy",
-    "Create/select canonical private paused private workstream repository",
-    "Promote schemas and validators only after extraction map approval"
-  ],
+  "as_of_date": "2026-09-07",
+  "schema_version": "2.0.0",
   "program": {
-    "authoritative_reference": "private source repository",
-    "current_iteration": "PPI-R0",
-    "current_status": "ready_to_start",
     "id": "PPI",
-    "name": "Public-Private Intelligence extraction and deployment",
-    "public_dashboard_target": "jansuman200001-prog/mmm-audit-dashboard",
-    "strategy": "Inventory \u2192 extract \u2192 isolate \u2192 deploy \u2192 complete missing inputs",
-    "write_note": "Dashboard repo write access was unavailable through the connected integration; tracker is committed in MMM docs first."
+    "name": "Public-Private Intelligence R11 Batch-3 R2 production-proof program",
+    "current_iteration": "PPI-R11",
+    "current_status": "code_remediation_complete_real_pilot_pending",
+    "authoritative_reference": "canonical R2 producer and private analysis repositories",
+    "public_dashboard_target": "jansuman200001-prog/mmm-audit-dashboard:gh-pages",
+    "strategy": "Architecture → implementation → security hardening → remediation → CI validation → deployment → controlled real pilot → authentic dossier → isolated scoring → review/countability decision",
+    "write_note": "R11 Batch-3 R2 code remediation is complete. No active technical remediation blocker remains. Authentic real-pilot production evidence has not yet been generated."
   },
-  "safety": [
-    {
-      "label": "MMM production scoring change authorized",
-      "value": false
-    },
-    {
-      "label": "source evidence writes authorized",
-      "value": false
-    },
-    {
-      "label": "Automatic trading authorized",
-      "value": false
-    },
-    {
-      "label": "Candidate promotion authorized",
-      "value": false
-    },
-    {
-      "label": "Public repo may contain private scores",
-      "value": false
-    },
-    {
-      "label": "Target runtime may depend directly on MMM",
-      "value": false
-    }
-  ],
-  "schema_version": "1.0.0",
   "summary_cards": [
     {
-      "caption": "Portable bootstrap, schemas, validators, dossier logic and shadow protocol exist.",
-      "label": "MMM reference implementation",
+      "label": "R11/R2 remediation",
+      "value": "COMPLETE",
       "state": "implemented",
-      "value": "Substantial"
+      "caption": "Tracked remediation work is merged and deployed across control-plane, private analysis, and canonical producer repositories."
     },
     {
-      "caption": "News namespace not deployed to active paused public workstream repository.",
-      "label": "Target public repository",
+      "label": "Active technical blockers",
+      "value": "0",
+      "state": "implemented",
+      "caption": "No currently identified code-remediation defect remains in the tracked R11 Batch-3 R2 loop."
+    },
+    {
+      "label": "R2 handoff architecture",
+      "value": "48 / 50 / 49",
+      "state": "implemented",
+      "caption": "48 bundles, 50 extracted paths, and 49 provider operations are frozen and validated."
+    },
+    {
+      "label": "Security & provenance gates",
+      "value": "PASS",
+      "state": "implemented",
+      "caption": "Trusted run binding, attestation verification, safe extraction, no-network/no-token private scoring, job-log leak scanning, and authenticated resumability are deployed."
+    },
+    {
+      "label": "Authentic real pilot dossier",
+      "value": "NOT PROVEN",
       "state": "pending",
-      "value": "Pending"
+      "caption": "CI and remediation evidence do not substitute for a completed real producer pilot and authentic 16-class production dossier."
     },
     {
-      "caption": "Canonical paused private workstream repository still needs to be created or selected.",
-      "label": "Target private repository",
-      "state": "blocked",
-      "value": "Missing"
-    },
-    {
-      "caption": "SEC, company-source, Polygon/Massive news and Finnhub news collectors remain unimplemented.",
-      "label": "Public collectors",
-      "state": "blocked",
-      "value": "Missing"
-    },
-    {
-      "caption": "20 isolated successful runs are required before integration decision.",
-      "label": "Shadow runs",
-      "state": "not_started",
-      "value": "0 / 20"
-    },
-    {
-      "caption": "No production scoring, qualification, deployment, or trading authorization.",
-      "label": "Integration decision",
-      "state": "not_started",
-      "value": "Not reached"
+      "label": "Next milestone",
+      "value": "CONTROLLED REAL PILOT",
+      "state": "ready_to_start",
+      "caption": "Run the deployed architecture against a real controlled acquisition, then materialize, score, and review the resulting authentic evidence."
     }
+  ],
+  "capabilities": [
+    {"name":"Canonical R2 producer identity","mmm_status":"implemented","target_status":"deployed","evidence":"MarketMakingLFG/ppi-data-acquisition, repo ID 1312286476"},
+    {"name":"Exact provider mapping from actual receipts","mmm_status":"implemented_tested","target_status":"pass","evidence":"tools/validate_r11_public_handoff_r2.py"},
+    {"name":"Trusted run/materialization identity binding","mmm_status":"implemented_tested","target_status":"pass","evidence":"run ID, attempt, and exact head are independently verified"},
+    {"name":"Authority fail-closed validation","mmm_status":"implemented_tested","target_status":"pass","evidence":"seven authority fields must be false; authorized_actions must be empty"},
+    {"name":"Exact package-shape enforcement","mmm_status":"implemented_tested","target_status":"pass","evidence":"48 bundles / 50 paths / 49 requests"},
+    {"name":"Safe archive extraction","mmm_status":"implemented_tested","target_status":"pass","evidence":"path traversal, duplicate, symlink, type, size, and expansion protections"},
+    {"name":"Validator-before-scoring gate","mmm_status":"implemented_tested","target_status":"pass","evidence":"private workflow validates R2 and timestamps before scoring"},
+    {"name":"Isolated private scoring","mmm_status":"implemented_tested","target_status":"pass","evidence":"runtime/shadow scoring root under isolated network namespace"},
+    {"name":"No-network / no-token analysis boundary","mmm_status":"implemented_tested","target_status":"pass","evidence":"unshare --net, env -i, and token absence assertions"},
+    {"name":"Review-only registry proposal","mmm_status":"implemented_tested","target_status":"pass","evidence":"read-only permissions; no write/merge authority"},
+    {"name":"Provenance attestation verification","mmm_status":"implemented_tested","target_status":"pass","evidence":"archive and attestation digests verified before extraction"},
+    {"name":"Completed-job-log secret-leak scanning","mmm_status":"implemented_tested","target_status":"deployed","evidence":"producer workflow retrieves completed job logs and retains only safe scan receipts"},
+    {"name":"Authenticated cross-attempt resumability","mmm_status":"implemented_tested","target_status":"deployed","evidence":"same run, prior attempt, exact head, authenticated checkpoint digest/tag"},
+    {"name":"Partial/corrupt shard recomputation","mmm_status":"implemented_tested","target_status":"deployed","evidence":"only complete authenticated shard operation sets are reused"},
+    {"name":"Success/failure evidence separation","mmm_status":"implemented_tested","target_status":"deployed","evidence":"separate retention paths for successful evidence and failure diagnostics"},
+    {"name":"Retention and replay controls","mmm_status":"implemented_tested","target_status":"pass","evidence":"replay receipts are non-authorizing; authorized_actions remains empty"},
+    {"name":"Adversarial negative coverage","mmm_status":"implemented_tested","target_status":"pass","evidence":"focused R2 adversarial suites green with historical wrapper qualification"},
+    {"name":"16-class dossier completeness contract","mmm_status":"implemented_tested","target_status":"pass","evidence":"pilot dossier validator requires all 16 mandatory evidence classes"},
+    {"name":"Canonical materializer compatibility","mmm_status":"implemented_tested","target_status":"pass","evidence":"R1 historical identity preserved; R2 requires canonical producer name and repo ID"},
+    {"name":"Authentic completed real pilot dossier","mmm_status":"not_generated","target_status":"not_proven","evidence":"requires a controlled real producer pilot"}
+  ],
+  "iterations": [
+    {"id":"PPI-R0","name":"Reference inventory and canonical-source freeze","goal":"Freeze architecture and canonical identities.","state":"implemented"},
+    {"id":"PPI-R1","name":"Canonical repositories and handoff foundation","goal":"Deploy the public/private handoff foundations.","state":"implemented"},
+    {"id":"PPI-R2","name":"Contract reconciliation and hardening","goal":"Harden schemas, mappings, provenance, and authority constraints.","state":"implemented"},
+    {"id":"PPI-R3","name":"Producer acquisition implementation","goal":"Implement provider-backed acquisition and receipt generation.","state":"implemented"},
+    {"id":"PPI-R4","name":"Deterministic transformation and package validation","goal":"Enforce deterministic normalized R2 package semantics.","state":"implemented"},
+    {"id":"PPI-R5","name":"Public handoff and immutable evidence","goal":"Produce verifiable public handoff artifacts bound to exact run identity.","state":"implemented"},
+    {"id":"PPI-R6","name":"Private verification and quarantine","goal":"Independently verify source, run, attestation, archive, and extraction.","state":"implemented"},
+    {"id":"PPI-R7","name":"Isolated dossier pipeline","goal":"Run validation and scoring inside a no-network/no-token boundary.","state":"implemented"},
+    {"id":"PPI-R8","name":"Private evidence adapters and dossier completeness","goal":"Require all mandatory evidence classes and successful receipt semantics.","state":"implemented"},
+    {"id":"PPI-R9","name":"End-to-end remediation validation","goal":"Validate the full R11 Batch-3 R2 architecture and adversarial gates.","state":"implemented"},
+    {"id":"PPI-R10","name":"Deployment and producer security hardening","goal":"Deploy completed-job-log scanning and authenticated cross-attempt resumability.","state":"implemented"},
+    {"id":"PPI-R11","name":"Controlled real pilot and authentic production proof","goal":"Execute one controlled real acquisition and produce an authentic evidence dossier bound to the deployed architecture.","state":"ready_to_start"},
+    {"id":"PPI-R12","name":"Review, countability, and operationalization decision","goal":"Use authentic pilot evidence and isolated scoring to decide countability and any later operationalization.","state":"not_reached"}
+  ],
+  "next_actions": [
+    "Run the controlled real producer pilot against the deployed canonical R2 architecture",
+    "Capture real provider receipts, trusted run identity, provenance attestation, and exact archive digest",
+    "If a retry occurs, retain genuine authenticated cross-attempt resume evidence",
+    "Retain the completed-job-log secret-leak scan receipt from the real run",
+    "Generate the complete authentic 16-class evidence dossier bound to the real workflow/run/attempt/commit",
+    "Materialize privately and enforce the exact 50-path safe-extraction contract",
+    "Run isolated no-network/no-token private scoring from runtime/shadow",
+    "Generate a non-authorizing review-only registry proposal with authorized_actions=[]",
+    "Make the review/countability decision from authentic evidence",
+    "Treat any later operationalization as a separate decision; pilot success must not auto-authorize downstream actions"
+  ],
+  "safety": [
+    {"label":"Production proof already claimed","value":false},
+    {"label":"CI fixtures may substitute for a real pilot","value":false},
+    {"label":"Pilot success automatically authorizes downstream action","value":false},
+    {"label":"Registry mutation authorized","value":false},
+    {"label":"Private scoring may use network or provider tokens","value":false},
+    {"label":"Historical producer name is canonical for R2","value":false}
   ]
 }

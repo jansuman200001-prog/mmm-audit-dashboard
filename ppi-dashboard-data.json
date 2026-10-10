@@ -1,0 +1,392 @@
+{
+  "as_of_date": "2026-07-22",
+  "capabilities": [
+    {
+      "evidence": "MMM private review; isolated public and private repositories",
+      "mmm_status": "implemented",
+      "name": "Public/private architecture",
+      "target_status": "implemented"
+    },
+    {
+      "evidence": "PPI-R0 through PPI-R2 validation gates",
+      "mmm_status": "implemented",
+      "name": "Shared public contracts and privacy exclusions",
+      "target_status": "implemented"
+    },
+    {
+      "evidence": "paused public workstream live primary-source workflow; private review prospective SEC coverage",
+      "mmm_status": "reference_only",
+      "name": "SEC and official-company collection",
+      "target_status": "implemented"
+    },
+    {
+      "evidence": "PPI-R4 deterministic transformation contract",
+      "mmm_status": "validated",
+      "name": "Normalization, deduplication, and tagging",
+      "target_status": "implemented"
+    },
+    {
+      "evidence": "Commit A/B/C public-news transactions",
+      "mmm_status": "validated",
+      "name": "Immutable public-news publishing",
+      "target_status": "implemented"
+    },
+    {
+      "evidence": "PPI-R6 exact dataset verification",
+      "mmm_status": "validated",
+      "name": "Private verification and quarantine",
+      "target_status": "implemented"
+    },
+    {
+      "evidence": "PPI-R7 isolated dossier pipeline",
+      "mmm_status": "validated",
+      "name": "Dossier compiler and privacy-safe exporter",
+      "target_status": "implemented"
+    },
+    {
+      "evidence": "PPI-R8 adapter contracts and tests",
+      "mmm_status": "validated",
+      "name": "Private evidence adapters",
+      "target_status": "implemented"
+    },
+    {
+      "evidence": "5 of 5 official R9 runs",
+      "mmm_status": "reference_only",
+      "name": "Hardened end-to-end validation",
+      "target_status": "implemented"
+    },
+    {
+      "evidence": "5 of 5 R10 periods; readiness validated; latest outcome registry_complete",
+      "mmm_status": "reference_only",
+      "name": "Reviewed source-period control",
+      "target_status": "implemented"
+    },
+    {
+      "evidence": "paused private workstream PRs #148\u2013#155",
+      "mmm_status": "reference_only",
+      "name": "Deterministic read-only shadow scoring",
+      "target_status": "implemented"
+    },
+    {
+      "evidence": "paused private workstream PRs #163\u2013#164; registries 0/80 tickers and 0/20 batches",
+      "mmm_status": "reference_protocol",
+      "name": "Eighty-ticker cumulative shadow validation",
+      "target_status": "in_progress"
+    },
+    {
+      "evidence": "80-ticker queue, twenty four-ticker batches, append-only cumulative membership",
+      "mmm_status": "reference_only",
+      "name": "Frozen batch queue and planner",
+      "target_status": "implemented"
+    },
+    {
+      "evidence": "Review-only candidate receipts; automatic registry writes remain disabled",
+      "mmm_status": "reference_only",
+      "name": "Countable-candidate receipts",
+      "target_status": "implemented"
+    },
+    {
+      "evidence": "Unsupported or proxy-only options claims remain fail-closed",
+      "mmm_status": "blocked",
+      "name": "Genuine options-market access",
+      "target_status": "blocked"
+    },
+    {
+      "evidence": "Explicit safety boundary",
+      "mmm_status": "not_authorized",
+      "name": "MMM or source evidence runtime integration",
+      "target_status": "not_authorized"
+    },
+    {
+      "evidence": "All authorized-action counts remain zero",
+      "mmm_status": "not_authorized",
+      "name": "Broker, order, and trading actions",
+      "target_status": "not_authorized"
+    }
+  ],
+  "iterations": [
+    {
+      "goal": "MMM reference inventory and canonical repository boundaries are frozen.",
+      "id": "PPI-R0",
+      "name": "Reference inventory and canonical-source freeze",
+      "state": "implemented"
+    },
+    {
+      "goal": "The isolated public and private repositories are operational.",
+      "id": "PPI-R1",
+      "name": "Create and populate canonical repositories",
+      "state": "implemented"
+    },
+    {
+      "goal": "Public contracts, hashes, synthetic-content controls, and privacy exclusions are enforced.",
+      "id": "PPI-R2",
+      "name": "Contract reconciliation and hardening",
+      "state": "implemented"
+    },
+    {
+      "goal": "SEC and allowlisted official-company collection operate under bounded live-source controls.",
+      "id": "PPI-R3",
+      "name": "Primary-source collectors",
+      "state": "implemented"
+    },
+    {
+      "goal": "Deterministic public transformation and stable identity rules are active.",
+      "id": "PPI-R4",
+      "name": "Normalization, deduplication and tagging",
+      "state": "implemented"
+    },
+    {
+      "goal": "Reviewed public snapshots use immutable Commit A/B/C transactions.",
+      "id": "PPI-R5",
+      "name": "Public workflow and immutable publishing",
+      "state": "implemented"
+    },
+    {
+      "goal": "Exact public artifacts are verified, quarantined, skipped, or accepted fail-closed.",
+      "id": "PPI-R6",
+      "name": "Private verification and quarantine",
+      "state": "implemented"
+    },
+    {
+      "goal": "Private dossiers and sanitized exports run without MMM or source evidence runtime dependencies.",
+      "id": "PPI-R7",
+      "name": "Isolated dossier pipeline",
+      "state": "implemented"
+    },
+    {
+      "goal": "Structural and market-confirmation adapters enforce explicit missing and contradictory states.",
+      "id": "PPI-R8",
+      "name": "Private evidence adapters",
+      "state": "implemented"
+    },
+    {
+      "goal": "Five distinct official countable R9 transactions are complete.",
+      "id": "PPI-R9",
+      "name": "Hardened end-to-end validation",
+      "state": "implemented"
+    },
+    {
+      "goal": "Five reviewed source periods and readiness gates are validated under automatic fail-closed monitoring.",
+      "id": "PPI-R10",
+      "name": "Reviewed source-period control",
+      "state": "implemented"
+    },
+    {
+      "goal": "Approve eighty active tickers through twenty immutable four-ticker cumulative batches across the required trading-date coverage and complete formal closure reviews.",
+      "id": "PPI-R11",
+      "name": "Eighty-ticker cumulative shadow validation",
+      "progress": {
+        "accepted_batches": 0,
+        "approved_tickers": 0,
+        "distinct_trading_dates": 0,
+        "first_batch": [
+          "AAPL",
+          "MU",
+          "NVDA",
+          "AMD"
+        ],
+        "minimum_trading_dates": 10,
+        "new_tickers_per_batch": 4,
+        "preferred_trading_dates": 20,
+        "required_approved_tickers": 80,
+        "required_batches": 20
+      },
+      "state": "pending"
+    },
+    {
+      "goal": "No integration decision is permitted before formal R11 closure, security/licensing/performance review, explicit approval, and defined rollback.",
+      "id": "PPI-R12",
+      "name": "Integration decision",
+      "state": "not_reached"
+    }
+  ],
+  "latest_r11_observation": {
+    "accepted_batch_credit": 0,
+    "accepted_ticker_credit": 0,
+    "artifact_status": "validated_shadow_artifact",
+    "as_of_utc": "2026-07-21T23:26:03Z",
+    "authorized_actions": [],
+    "evidence_novelty": "duplicate_evidence_snapshot",
+    "evidence_snapshot_sha256": "235d80efaa37996f2e4cef8f63b8844240176804c15ca573e75810284cbe30c0",
+    "expanded_registry_disposition": "artifact_not_eighty_ticker_capable",
+    "head_sha": "private commit",
+    "workflow_run_attempt": 1,
+    "workflow_run_id": 29877086868
+  },
+  "next_actions": [
+    "Prepare reviewed NVDA and AMD evidence without changing the frozen first batch",
+    "Extend the scorer to emit the exact cumulative AAPL, MU, NVDA, and AMD artifact",
+    "Retain a read-only batch-1 countability receipt",
+    "Append batch 1 only through a separate reviewed pull request if all gates pass",
+    "Continue in the frozen four-ticker order until 80 tickers and 20 batches are complete",
+    "Complete security, licensing, performance, rollback, approval, and formal closure reviews before R12"
+  ],
+  "program": {
+    "authoritative_reference": "private source repository",
+    "current_iteration": "PPI-R11",
+    "current_status": "eighty_ticker_cumulative_validation_collecting",
+    "id": "PPI",
+    "name": "Public-Private Intelligence extraction and deployment",
+    "public_dashboard_target": "jansuman200001-prog/mmm-audit-dashboard",
+    "strategy": "Inventory \u2192 extract \u2192 isolate \u2192 validate \u2192 expand cumulatively \u2192 close fail-closed",
+    "write_note": "This sanitized tracker reports evidence milestones only and grants no production, integration, or trading authority."
+  },
+  "r11_exit_gate": {
+    "eighty_unique_approved_tickers": false,
+    "explicit_approver": null,
+    "formal_closure_pull_request": null,
+    "future_information_violations": 0,
+    "hidden_synthetic_value_violations": 0,
+    "licensing_review": "pending",
+    "minimum_date_coverage": false,
+    "passed": false,
+    "performance_review": "pending",
+    "preferred_date_coverage": false,
+    "rollback_plan": "pending",
+    "security_review": "pending",
+    "summary_manifest_valid": true,
+    "twenty_countable_batches": false,
+    "unclassified_provider_failures": 0,
+    "write_boundary_violations": 0
+  },
+  "safety": [
+    {
+      "label": "MMM production scoring change authorized",
+      "value": false
+    },
+    {
+      "label": "Automatic qualification change authorized",
+      "value": false
+    },
+    {
+      "label": "source evidence writes authorized",
+      "value": false
+    },
+    {
+      "label": "Automatic trading authorized",
+      "value": false
+    },
+    {
+      "label": "Candidate promotion authorized",
+      "value": false
+    },
+    {
+      "label": "Automatic deployment authorized",
+      "value": false
+    },
+    {
+      "label": "Broker or order actions authorized",
+      "value": false
+    },
+    {
+      "label": "PPI-R12 integration authorized",
+      "value": false
+    },
+    {
+      "label": "Target runtime may depend directly on MMM",
+      "value": false
+    }
+  ],
+  "schema_version": "1.4.0",
+  "summary_cards": [
+    {
+      "caption": "Reference inventory, contracts, isolation rules, validators, and safety gates are retained in MMM.",
+      "label": "MMM validation gates",
+      "state": "implemented",
+      "value": "R0\u2013R8"
+    },
+    {
+      "caption": "Five distinct hardened public/private validation transactions completed.",
+      "label": "Official R9 runs",
+      "state": "implemented",
+      "value": "5 / 5"
+    },
+    {
+      "caption": "Reviewed evidence and source-period requirements are complete; readiness remains validated.",
+      "label": "R10 source periods",
+      "state": "implemented",
+      "value": "5 / 5"
+    },
+    {
+      "caption": "Registry-complete monitoring continues fail-closed without adding a sixth period.",
+      "label": "R10 automation",
+      "state": "implemented",
+      "value": "Healthy"
+    },
+    {
+      "caption": "Ticker breadth grows through frozen four-ticker batches; no historical credit was migrated.",
+      "label": "R11 approved tickers",
+      "state": "pending",
+      "value": "0 / 80"
+    },
+    {
+      "caption": "Each countable batch adds exactly four approved tickers and rescoring covers the complete cumulative cohort.",
+      "label": "R11 cumulative batches",
+      "state": "pending",
+      "value": "0 / 20"
+    },
+    {
+      "caption": "Ten distinct weekday trading dates are required; twenty are preferred.",
+      "label": "R11 trading dates",
+      "state": "pending",
+      "value": "0 / 10"
+    },
+    {
+      "caption": "No integration decision or implementation is authorized before formal R11 closure.",
+      "label": "R12 decision",
+      "state": "not_started",
+      "value": "Not reached"
+    },
+    {
+      "caption": "No MMM writes, source evidence writes, qualification changes, promotion, deployment, broker actions, orders, or trading are authorized.",
+      "label": "Production authority",
+      "state": "not_started",
+      "value": "None"
+    }
+  ],
+  "verification_checkpoint": {
+    "controller_issue": "musksuman3/paused private workstream#13",
+    "controller_state": "R10_SOURCE_CONTROL_ACTIVE",
+    "latest_private_validation_run": 29874009181,
+    "latest_public_implementation_pr": 71,
+    "latest_public_verification_run": 29873989791,
+    "latest_r10_outcome": "registry_complete",
+    "observed_at_utc": "2026-07-22T00:35:30Z",
+    "production_authority": false,
+    "r10_automation_health": "healthy",
+    "r10_readiness": "validated",
+    "r10_required_bundles": 8,
+    "r10_required_source_periods": 5,
+    "r10_reviewed_bundles": 8,
+    "r10_source_periods": 5,
+    "r11_approved_tickers": 0,
+    "r11_closure_contract": "PPI-R11-EIGHTY-TICKER-CLOSURE-001",
+    "r11_closure_contract_sha256": "4f55963a59822be9928e7a8802fb6690fb07f92caa90e52af7156c416dc1b9f6",
+    "r11_countable_batches": 0,
+    "r11_distinct_trading_dates": 0,
+    "r11_first_batch": [
+      "AAPL",
+      "MU",
+      "NVDA",
+      "AMD"
+    ],
+    "r11_historical_credit_migrated": false,
+    "r11_implementation_merge": "private commit",
+    "r11_implementation_pr": 164,
+    "r11_issue_status_block_visible": true,
+    "r11_latest_expanded_disposition": "artifact_not_eighty_ticker_capable",
+    "r11_latest_legacy_run": 29877086868,
+    "r11_minimum_trading_dates": 10,
+    "r11_new_tickers_per_batch": 4,
+    "r11_preferred_trading_dates": 20,
+    "r11_required_approved_tickers": 80,
+    "r11_required_countable_batches": 20,
+    "r11_scoring_schedule": "02:05 UTC weekdays",
+    "r11_status_schedule": "02:17 UTC weekdays",
+    "r11_superseded_contract": "PPI-R11-TWENTY-RUN-CLOSURE-001",
+    "r11_target_queue_receipt_sha256": "afd074a959c2c612f6dd5f6c91ed66ce2346144167c73b4d21999005e9a049b3",
+    "r12_status": "not_reached",
+    "r9_official_runs": 5,
+    "r9_required_runs": 5
+  }
+}
